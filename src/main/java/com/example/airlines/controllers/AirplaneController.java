@@ -1,6 +1,7 @@
 package com.example.airlines.controllers;
 
 import com.example.airlines.models.Airplane;
+import com.example.airlines.models.Airport;
 import com.example.airlines.repositories.AirplaneRepository;
 import com.example.airlines.repositories.AirportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +30,11 @@ public class AirplaneController {
     @RequestMapping(method = RequestMethod.POST)
     public Airplane create(@RequestBody Airplane airplane)
     {
+        Optional<Airport> newAirport = airportRepository.findById(airplane.getAirport().getId());
 
-        //        for (Writer writer: book.getWriters()){
-        //            Optional<Writer> newWriter = writerRepository.findById(writer.getId());
-        //
-        //            if(!newWriter.isPresent()){
-        //                throw new RuntimeException();
-        //            }
-        //        }
-
+        if(!newAirport.isPresent()){
+            throw new RuntimeException();
+        }
         return airplaneRepository.save(airplane);
     }
 }

@@ -6,12 +6,21 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Airplane {
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-//    @ManyToOne
-//    @NotNull
-//    private long Airport;
+    public Airport getAirport() {
+        return airport;
+    }
+
+    public void setAirport(Airport airport) {
+        this.airport = airport;
+    }
+
+    @ManyToOne
+    @NotNull
+    private Airport airport;
 
     public int getFuel() {
         return fuel;
@@ -23,6 +32,16 @@ public class Airplane {
 
     private int fuel;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
+
     public long getId() {
         return id;
     }
@@ -30,7 +49,4 @@ public class Airplane {
     public void setId(long id) {
         this.id = id;
     }
-
-
-
 }

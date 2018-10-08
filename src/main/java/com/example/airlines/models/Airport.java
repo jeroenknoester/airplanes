@@ -14,13 +14,13 @@ public class Airport {
         this.id = id;
     }
 
-    public List<Airplane> getAirplanes() {
-        return airplanes;
-    }
+//    public List<Airplane> getAirplanes() {
+//        return airplanes;
+//    }
 
-    public void setAirplanes(List<Airplane> airplanes) {
-        this.airplanes = airplanes;
-    }
+//    public void setAirplanes(List<Airplane> airplanes) {
+//        this.airplanes = airplanes;
+//    }
 
     public String getCity() {
         return City;
@@ -42,8 +42,8 @@ public class Airport {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany
-    List<Airplane> airplanes;
+//    @OneToMany
+//    List<Airplane> airplanes;
 
     private String City;
     private int capacity;
