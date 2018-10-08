@@ -8,6 +8,17 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    public long getAirportId() {
+        return AirportId;
+    }
+
+    public void setAirportId(long airportId) {
+        AirportId = airportId;
+    }
+
+    @ManyToOne
+    private long AirportId;
+
     public int getFuel() {
         return fuel;
     }
@@ -25,5 +36,7 @@ public class Airplane {
     public void setId(long id) {
         this.id = id;
     }
+
+
 
 }
