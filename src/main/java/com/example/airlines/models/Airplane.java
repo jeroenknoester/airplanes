@@ -9,17 +9,9 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    public long getAirportId() {
-        return AirportId;
-    }
-
-    public void setAirportId(long airportId) {
-        AirportId = airportId;
-    }
-
-    @ManyToOne
-    @NotNull
-    private long AirportId;
+//    @ManyToOne
+//    @NotNull
+//    private long Airport;
 
     public int getFuel() {
         return fuel;
