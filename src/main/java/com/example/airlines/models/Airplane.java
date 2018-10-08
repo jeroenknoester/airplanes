@@ -10,8 +10,10 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToMany
-    @NotNull
+    private int fuel;
+
+//    @ManyToMany
+//    @NotNull
 //    private List<Writer> writers;
 
     public long getId() {
