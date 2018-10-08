@@ -1,8 +1,6 @@
 package com.example.airlines.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
 public class Airplane {
@@ -10,11 +8,15 @@ public class Airplane {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private int fuel;
+    public int getFuel() {
+        return fuel;
+    }
 
-//    @ManyToMany
-//    @NotNull
-//    private List<Writer> writers;
+    public void setFuel(int fuel) {
+        this.fuel = fuel;
+    }
+
+    private int fuel;
 
     public long getId() {
         return id;
@@ -24,11 +26,4 @@ public class Airplane {
         this.id = id;
     }
 
-//    public List<Writer> getWriters() {
-//        return writers;
-//    }
-//
-//    public void setWriters(List<Writer> writers) {
-//        this.writers = writers;
-//    }
 }
