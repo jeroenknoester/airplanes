@@ -1,6 +1,7 @@
 package com.example.airlines.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Airplane {
@@ -17,6 +18,7 @@ public class Airplane {
     }
 
     @ManyToOne
+    @NotNull
     private long AirportId;
 
     public int getFuel() {
